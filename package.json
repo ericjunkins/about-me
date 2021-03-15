@@ -1,6 +1,6 @@
 {
-  "homepage": "https://ericjunkins.github.io/personal-site/",
-  "name": "personal-site",
+  "homepage": "https://ericjunkins.github.io/about-me/",
+  "name": "about-me",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
