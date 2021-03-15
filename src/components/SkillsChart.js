@@ -8,7 +8,7 @@ import {skills} from "../data/skillset";
 const SkillsChart = ({size}) => {
     let margin;
     if (size.width < 500) {
-        margin = { top: 20, bottom: 20, right: 20, left: 20}
+        margin = { top: 0, bottom: 0, right: 75, left: 75}
     } else if (size.width < 900) {
         margin = { top: 20, bottom: 20, right: 40, left: 40}
     } else {
@@ -16,14 +16,19 @@ const SkillsChart = ({size}) => {
     }
     return (
         <Center pt={0} w="100%">
-            <Box h={["500px", "500px", "500px", "700px"]} w={["100%"]} maxW={["768px"]}>
-                <D3Container 
-                    title="spider-chart"
-                    generate={GenerateChart}
-                    data={skills}
-                    color="#49bede"
-                    margin={margin}
-                />
+            <Box h={["350px", "500px", "500px", "700px"]} w={["100%"]} maxW={["768px"]}>
+                { size.width ? 
+                    <D3Container 
+                        title="spider-chart"
+                        generate={GenerateChart}
+                        data={skills}
+                        color="#49bede"
+                        margin={margin}
+                        size={size}
+                    />
+                    : null
+                }
+
             </Box>
         </Center>
     )

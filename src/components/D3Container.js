@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import {Center, Flex, Box} from "@chakra-ui/react";
 
-const D3Container = ({title, generate, data, color, margin}) => {
+const D3Container = ({title, generate, data, color, margin, size}) => {
     useEffect(() => {
         let ele = document.getElementById('d3-' + title)
         generate({
@@ -10,7 +10,8 @@ const D3Container = ({title, generate, data, color, margin}) => {
             height: ele.offsetHeight,
             data: data,
             color: color,
-            margin: margin
+            margin: margin,
+            size: size
         });
     }, [])
 

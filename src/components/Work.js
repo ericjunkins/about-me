@@ -200,10 +200,10 @@ const Work = (props) => {
     return (
         <Box>
             <Center w="100%">
-                <Box w="90%" maxW="1500px" id="work">
-                    <Box textAlign="start" px={5} py={5}> 
+                <Box w="100%" maxW="1500px" id="work" px={2, 5}>
+                    <Box textAlign="start" px={[2, 5]} py={5}> 
                     <Text fontWeight={400} fontSize={"26px"} color="nav.button"> A Little bit about my work </Text>
-                        <Text px={5} fontSize={"20px"}>
+                        <Text px={[2, 5]} fontSize={["16px", "16px", "20px", "20px"]}>
                             Click on a card to see some examples of my work in each section.
                         </Text>
                     </Box>

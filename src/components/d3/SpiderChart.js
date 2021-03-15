@@ -22,8 +22,9 @@ function chart(config){
         svg,
         data = config.data,
         radarChart,
-        color = config.color
-
+        color = config.color,
+        fontSize = config.size.width < 500 ? "0.7em" : "1em"
+    // console.log(config.size)
     
     function spider(){
         initialize();
@@ -98,7 +99,7 @@ function chart(config){
             .attr('class', 'spider-dots')
             .attr('cx', d=> d.x)
             .attr('cy', d=> d.y)
-            .attr('r', 7)
+            .attr('r', config.size.width <= 500 ? 5: 7)
 
         var texts = radarChart.selectAll('text')
             .data(data, d=> d.label)
@@ -108,10 +109,11 @@ function chart(config){
             .attr('x', d=> angleToCoordinate(d.angle, 5.8).x)
             .attr('y', d=> angleToCoordinate(d.angle, 5.8).y)
             .attr('text-anchor', d=> d.anchor)
+            .attr('font-size', fontSize)
             .text(d=> d.label)
 
         radarChart.append('circle')
-            .attr('r', 40)
+            .attr('r', config.size.width <= 500 ? 28: 40)
             .attr('class', 'spider-middle')
         
         radarChart.append('text')
@@ -119,6 +121,7 @@ function chart(config){
             .attr('y', 0)
             .attr('text-anchor', 'middle')
             .attr('dominant-baseline', 'middle')
+            .attr('font-size', fontSize)
             .text('My Skills')
     }
 
