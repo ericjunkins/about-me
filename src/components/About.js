@@ -5,8 +5,8 @@ const About = (props) => {
 
     return (
         <Center w="100%" py={10} id="about"> 
-            <Box w="100%" maxW="1500px" textAlign="start" px={[2,5]}>
-                <Text fontWeight={400} fontSize={"26px"} color="nav.button"> A Little bit about me </Text>
+            <Box w="100%" maxW="1500px" textAlign="start" px={[5,5]}>
+                <Text fontWeight={500} fontSize={"26px"} color="nav.button"> A Little bit about me </Text>
                 {/* <Text px={10} pt={4} fontSize={"24px"}>
                     Work/Academic Related
                 </Text> */}
