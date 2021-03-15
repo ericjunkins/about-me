@@ -21,16 +21,16 @@ const Navbar = (props) => {
         <Flex justify="space-between" background="nav.background" py={2} w="100%" px={20} boxShadow="3px 3px 3px #ababab" position="fixed">
             <Box></Box>
             <HStack spacing="30px" color="#fff">
-                <NavButton onClick={() => navTo("/#home")}>
+                <NavButton onClick={() => navTo("/about-me/#home")}>
                     <Text fontSize="20px" fontWeight={500}> Home </Text>
                 </NavButton>
-                <NavButton onClick={() => navTo("/#work")}>
+                <NavButton onClick={() => navTo("/about-me/#work")}>
                     <Text fontSize="20px" fontWeight={500}> Work </Text>
                 </NavButton>
-                <NavButton onClick={() => navTo("/#about")}>
+                <NavButton onClick={() => navTo("/about-me/#about")}>
                     <Text fontSize="20px" fontWeight={500}> About </Text>
                 </NavButton>
-                <NavButton onClick={() => navTo("/#contact")}>
+                <NavButton onClick={() => navTo("/about-me/#contact")}>
                     <Text fontSize="20px" fontWeight={500}> Contact </Text>
                 </NavButton>
                 {/* <NavButton onClick={() => navTo("/#home")}>

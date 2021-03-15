@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {Center, Flex, Box, Text, SimpleGrid, Image, Link, Tag, Tooltip} from "@chakra-ui/react";
+import {Center, Flex, Box, Text, Grid, GridItem, Image, Link, Tag, Tooltip, SimpleGrid} from "@chakra-ui/react";
 
 import ProjectCard from "./ProjectCard";
 import {FaCubes, FaRobot, FaPlug, FaCode, FaChartLine} from "react-icons/fa";
@@ -54,11 +54,11 @@ const Prototyping = (props) => {
                 using items like 3D printers (FDM, SLS, SLA, metallic), laser cutter, vacuum form, and casting to create designs that are easily and quickly testable and iterable. I've been
                 using these skills both towards robotic applications, as well as IoT sensor development platforms.
             </Text>
-            <SimpleGrid columns={2} spacing="20px" py={5}>
+            <SimpleGrid columns={2} spacing="20px" py={5} >
                 <Center>
-                    <Image src={rpi} alt="Raspberry Pi"/>
+                    <Image src={rpi} alt="Raspberry Pi" h="120px"/>
                 </Center>
-                <Image src={arduino} alt="Arduino" />
+                <Image src={arduino} alt="Arduino" h="120px"/>
             </SimpleGrid>
             <Text py={5} fontSize={"20px"} px={5}>
                 In development of rapid prototype robotic systems I leveraged devices such as Raspberry Pi, Arduino, BeagleBone, and other linux-based and micro-controller systems.
@@ -199,7 +199,6 @@ const Work = (props) => {
 
     return (
         <Box>
-
             <Center w="100%">
                 <Box w="90%" maxW="1500px" id="work">
                     <Box textAlign="start" px={5} py={5}> 
@@ -208,33 +207,49 @@ const Work = (props) => {
                             Click on a card to see some examples of my work in each section.
                         </Text>
                     </Box>
-                    <SimpleGrid columns={5} h="200px" spacing={5}>
-                        <ProjectCard 
-                            icon={FaCubes}
-                            title={"3D Printing & Rapid Prototype"}
-                            toggle={toggleSection}
-                        />
-                        <ProjectCard 
-                            icon={FaRobot}
-                            title={"Robotics"}
-                            toggle={toggleSection}
-                        />
-                        <ProjectCard 
-                            icon={FaPlug}
-                            title={"Electronics"}
-                            toggle={toggleSection}
-                        />
-                        <ProjectCard 
-                            icon={FaChartLine}
-                            title={"Data Visualization"}
-                            toggle={toggleSection}
-                        />
-                        <ProjectCard 
-                            icon={FaCode}
-                            title={"Open Source Development"}
-                            toggle={toggleSection}
-                        />
-                    </SimpleGrid>
+                    <Grid 
+                        templateColumns={["repeat(4, 1fr)", "repeat(4, 1fr)", "repeat(6, 1fr)", "repeat(5, 1fr)"]} 
+                        templateRows={["repeat(3, 1fr)","repeat(3, 1fr)","repeat(2, 1fr)","repeat(1, 1fr)"]}
+                        h={["550px", "500px", "400px", "200px" ]}
+                        columnGap={5}
+                        rowGap={5}
+                    >   
+                        <GridItem colSpan={[2,2,2,1]} rowSpan={1}>
+                            <ProjectCard 
+                                icon={FaCubes}
+                                title={"3D Printing & Rapid Prototype"}
+                                toggle={toggleSection}
+                            />
+                        </GridItem>
+                        <GridItem colSpan={[2,2,2,1]} rowSpan={1}>
+                            <ProjectCard 
+                                icon={FaRobot}
+                                title={"Robotics"}
+                                toggle={toggleSection}
+                            />
+                        </GridItem>
+                        <GridItem colSpan={[2,2,2,1]} rowSpan={1}>
+                            <ProjectCard 
+                                icon={FaPlug}
+                                title={"Electronics"}
+                                toggle={toggleSection}
+                            />
+                        </GridItem>
+                        <GridItem colSpan={[2,2,2,1]} rowSpan={1} colStart={[3, 3 , 2, 4]}>
+                            <ProjectCard 
+                                icon={FaChartLine}
+                                title={"Data Visualization"}
+                                toggle={toggleSection}
+                            />
+                        </GridItem>
+                        <GridItem colSpan={[2,2,2,1]} rowSpan={1} colStart={[2,'none', 4, 5]}>
+                            <ProjectCard 
+                                icon={FaCode}
+                                title={"Open Source Development"}
+                                toggle={toggleSection}
+                            />
+                        </GridItem>
+                    </Grid>
                 </Box>
             </Center>
             <Center w="100%">

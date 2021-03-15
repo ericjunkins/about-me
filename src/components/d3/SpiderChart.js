@@ -11,20 +11,20 @@ let radialScale = d3.scaleLinear()
 
 
 function chart(config){
-    var width = config.width,
-        height = config.height,
+    let margin = (config.margin ? 
+        config.margin : 
+        {top: 0, bottom: 0, left: 0, right: 0}
+    )
+
+    var width = config.width - margin.left - margin.right,
+        height = config.height - margin.top - margin.bottom,
         id = config.id,
         svg,
         data = config.data,
         radarChart,
         color = config.color
 
-
-    let margin = (config.margin ? 
-        config.margin : 
-        {top: 0, bottom: 0, left: 0, right: 0}
-    )
-
+    
     function spider(){
         initialize();
         drawChart();
@@ -33,8 +33,8 @@ function chart(config){
     const initialize = () => {
         svg = d3.select('#' + id)
             .append('svg')
-            .attr('height', height)
-            .attr('width', width)
+            .attr('height', height + margin.top + margin.bottom)
+            .attr('width', width + margin.left + margin.right)
             .append('g')
             .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
 

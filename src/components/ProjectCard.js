@@ -11,9 +11,9 @@ const ProjectCard = ({icon, title, toggle, location}) => {
 
     return (
         <Center w="100%" h="100%" border="2px solid #3c97b0" boxShadow="4px 4px 4px #ababab" borderRadius="5px" onClick={cardClick} cursor="pointer">
-            <VStack px={10} h="75%">
+            <VStack px={[5,10]} h="75%">
                 <Icon as={icon} color="nav.button" boxSize="60px"/>
-                <Text fontSize="20px" fontWeight={700} color="nav.button"> {title} </Text>
+                <Text fontSize={["16px","20px"]} fontWeight={700} color="nav.button"> {title} </Text>
             </VStack>
         </Center>
     )

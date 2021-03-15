@@ -3,14 +3,18 @@ import {Center, Flex, Box, Text, SimpleGrid, Image, HStack, VStack} from "@chakr
 
 import Myself from "./../assets/avatar.svg";
 
-const Introduction = (props) => {
+const Introduction = ({size}) => {
+    // let config = {fontSize: "20px"};
+    // if (size.width <= 500){
+    //     config
+    // }
     return (
-        <Center textAlign="start" w="100%" pt={15} mt={10}>
-            <Flex justify="space-between" w="80%" maxW="1500px" px={4}>
+        <Center textAlign="start" w="100%" pt={15} mt={"80px"}>
+            <Flex justify="space-between" w={["100%"]} maxW="1500px" px={4}>
                 <Center h="200px">
                 <VStack textAlign="start" px={5}>
                     <Text fontSize="48px" w="100%" fontWeight={500} color="nav.button" px={10}> Hi I'm Eric </Text>
-                    <Text fontSize="20px" px={0}> I like to design and build robots, mechanisms, electronics, and generally tinker with things. I employ rapid prototyping principles to my designs for quick and inexpensive iteration. I also dabble with data visualization, front end development, and UI design</Text>
+                    <Text fontSize={["16px","16px","16px","22px"]} px={0}> I like to design and build robots, mechanisms, electronics, and generally tinker with things. I employ rapid prototyping principles to my designs for quick and inexpensive iteration. I also dabble with data visualization, front end development, and UI design</Text>
                 </VStack>
                 </Center>
                 <Image src={Myself} alt="Robot" boxSize="180px"/>
