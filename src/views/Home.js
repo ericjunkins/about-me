@@ -10,7 +10,7 @@ import Contact from "./../components/Contact";
 const Home = (props) => {
 
     return (
-        <Center w="100vw" bg="site.background">
+        <Center w="100vw" bg="site.background" fontFamily={`"Roboto", "Avenir", "Segoe UI", sans-serif;`} id="home">
             <Box w="100%" bg="site.background">
                 <Navbar />
                 <Introduction />

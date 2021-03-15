@@ -12,25 +12,30 @@ const NavButton = styled.button`
 `
 
 const Navbar = (props) => {
+
+    const navTo = (loc) => {
+        window.location.replace(loc)
+    }
+
     return (
-        <Flex justify="space-between" background="nav.background" py={4} w="100%" px={20} boxShadow="6px 5px 5px #ababab">
+        <Flex justify="space-between" background="nav.background" py={2} w="100%" px={20} boxShadow="3px 3px 3px #ababab" position="fixed">
             <Box></Box>
-            <HStack spacing="30px" pt="10px">
-                <NavButton>
-                    <Text color="nav.button" fontSize="20px" fontWeight={500}> Home </Text>
+            <HStack spacing="30px" color="#fff">
+                <NavButton onClick={() => navTo("/#home")}>
+                    <Text fontSize="20px" fontWeight={500}> Home </Text>
                 </NavButton>
-                <NavButton>
-                    <Text color="nav.button" fontSize="20px" fontWeight={500}> Work </Text>
+                <NavButton onClick={() => navTo("/#work")}>
+                    <Text fontSize="20px" fontWeight={500}> Work </Text>
                 </NavButton>
-                <NavButton>
-                    <Text color="nav.button" fontSize="20px" fontWeight={500}> About </Text>
+                <NavButton onClick={() => navTo("/#about")}>
+                    <Text fontSize="20px" fontWeight={500}> About </Text>
                 </NavButton>
-                <NavButton>
-                    <Text color="nav.button" fontSize="20px" fontWeight={500}> Contact </Text>
+                <NavButton onClick={() => navTo("/#contact")}>
+                    <Text fontSize="20px" fontWeight={500}> Contact </Text>
                 </NavButton>
-                <NavButton>
-                    <Text color="nav.button" fontSize="20px" fontWeight={500}> Resume </Text>
-                </NavButton>
+                {/* <NavButton onClick={() => navTo("/#home")}>
+                    <Text fontSize="20px" fontWeight={500}> Resume </Text>
+                </NavButton> */}
             </HStack>
         </Flex>
     )

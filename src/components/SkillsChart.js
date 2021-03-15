@@ -11,15 +11,15 @@ const SkillsChart = (props) => {
         <Center pt={0} w="100%">
             <VStack w="100%" h="100%">
                 {/* <Text fontSize="28px"> What do I do? </Text> */}
-                <Box  h="780px" w="80%" maxW="900px">
+                <Box  h="700px" w="80%" maxW="900px">
                     <D3Container 
                         title="spider-chart"
                         generate={GenerateChart}
                         data={skills}
                         color="#49bede"
                         margin={{
-                            top: 20,
-                            bottom: 20,
+                            top: 0,
+                            bottom: 0,
                             left: 20,
                             right: 20
                         }}

@@ -41,7 +41,7 @@ function chart(config){
         radarChart = svg.append('g')
             .attr('transform', 'translate(' + width/2 + ',' + height/2 + ')')
 
-        radialScale.range([20, Math.min(width, height) * 0.3])
+        radialScale.range([20, Math.min(width, height) * 0.4])
 
     }
     
@@ -98,7 +98,7 @@ function chart(config){
             .attr('class', 'spider-dots')
             .attr('cx', d=> d.x)
             .attr('cy', d=> d.y)
-            .attr('r', 5)
+            .attr('r', 7)
 
         var texts = radarChart.selectAll('text')
             .data(data, d=> d.label)

@@ -5,15 +5,15 @@ import Myself from "./../assets/avatar.svg";
 
 const Introduction = (props) => {
     return (
-        <Center textAlign="start" w="100%" pt={15} >
-            <Flex justify="space-between" w="80%" maxW="1200px" px={20}>
+        <Center textAlign="start" w="100%" pt={15} mt={10}>
+            <Flex justify="space-between" w="80%" maxW="1500px" px={4}>
                 <Center h="200px">
                 <VStack textAlign="start" px={5}>
-                    <Text fontSize="48px" w="100%" > Hi, I'm Eric </Text>
-                    <Text fontSize="22px"> I like to design and build robots, mechanisms, electronics, and generally tinker with things. I employ rapid prototyping principles to my designs for quick and inexpensive iteration. I also dabble with data visualization, front end development, and UI design</Text>
+                    <Text fontSize="48px" w="100%" fontWeight={500} color="nav.button" px={10}> Hi I'm Eric </Text>
+                    <Text fontSize="20px" px={0}> I like to design and build robots, mechanisms, electronics, and generally tinker with things. I employ rapid prototyping principles to my designs for quick and inexpensive iteration. I also dabble with data visualization, front end development, and UI design</Text>
                 </VStack>
                 </Center>
-                <Image src={Myself} alt="Robot" boxSize="200px"/>
+                <Image src={Myself} alt="Robot" boxSize="180px"/>
             </Flex>
         </Center>
     )
